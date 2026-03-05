@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    int x;
+
+    Base(int a) {      // parameterized constructor
+        x = a;
+        cout << "Base Constructor called" << endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    Derived(int b) : Base(b) {   // passing value to base constructor
+        cout << "Value of x = " << x << endl;
+        cout << "Derived Constructor called" << endl;
+    }
+};
+
+int main() {
+    Derived d(10);
+    return 0;
+}
